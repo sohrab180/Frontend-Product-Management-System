@@ -1,0 +1,93 @@
+.main-header {
+    background-color: #ffff;
+    color: white;
+  }
+
+  .main-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .logo img {
+    height: 40px;
+    cursor: pointer !important;
+  }
+
+ 
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+    cursor: pointer;
+  }
+
+  .nav-links a:hover {
+    color: #ff9800;
+    cursor: pointer;
+  }
+  .add-product a:hover{
+    color: #ffff !important;
+    cursor: pointer;
+  }
+
+  .btn-login {
+    background-color: #ff9800;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+  }
+
+  .btn-login:hover {
+    background-color: #e68900;
+  }
+
+  .dropdown-menu {
+    background-color: #2874f0;
+    border: none;
+  }
+
+  .dropdown-menu a {
+    color: white;
+    font-size: 0.9rem;
+  }
+
+  .dropdown-menu a:hover {
+    color: #ff9800;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+   
+
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }

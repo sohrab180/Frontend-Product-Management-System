@@ -1,0 +1,107 @@
+<!-- product-form.component.html -->
+<div class="product-form">
+  <div class="container">
+    <div class="form-container">
+      <div class="product-add">
+        <h2 class="form-title">{{ pageTitle }}</h2>
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="productPrice" class="form-label">Product Id <span class="text-danger">*</span></label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="productId" 
+              formControlName="productId"
+              [ngClass]="{'is-invalid': productForm.get('productId')?.touched && productForm.get('productId')?.invalid}"
+              placeholder="Enter Product Id" 
+             >
+            <div class="invalid-feedback">Please enter a valid Product Id.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="productName" class="form-label">Product Name <span class="text-danger">*</span></label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="productName" 
+              formControlName="name"
+              [ngClass]="{'is-invalid': productForm.get('name')?.touched && productForm.get('name')?.invalid}"
+              placeholder="Enter product name">
+            <div class="invalid-feedback">Please enter the product name.</div>
+          </div>
+          <div class="mb-3">
+            <label for="productCategory" class="form-label">Category <span class="text-danger">*</span></label>
+            <select 
+              class="form-select form-control"
+              id="productCategory" 
+              formControlName="category"
+              [ngClass]="{'is-invalid': productForm.get('category')?.touched && productForm.get('category')?.invalid}">
+              <option value="">Select Category</option>
+              <option value="Fashion">Fashion</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Furniture">Furniture</option>
+              <option value="Beauty">Beauty</option>
+            </select>
+            <div class="invalid-feedback">Please select a category.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="productPrice" class="form-label">Price (₹) <span class="text-danger">*</span></label>
+            <input 
+              type="number" 
+              class="form-control" 
+              id="productPrice" 
+              formControlName="price"
+              [ngClass]="{'is-invalid': productForm.get('price')?.touched && productForm.get('price')?.invalid}"
+              placeholder="Enter price" 
+              min="1">
+            <div class="invalid-feedback">Please enter a valid price.</div>
+          </div>
+          <div class="mb-3">
+            <label for="productAvailability" class="form-label">Availability <span class="text-danger">*</span></label>
+            <select 
+              class="form-select" 
+              id="productAvailability" 
+              formControlName="availability"
+              [ngClass]="{'is-invalid': productForm.get('availability')?.touched && productForm.get('availability')?.invalid}">
+              <option value="">Select availability</option>
+              <option value="Available">Available</option>
+              <option value="UnAvailable">UnAvailable</option>
+            </select>
+            <div class="invalid-feedback">Please select the availability status.</div>
+          </div>
+          <div class="mb-3">
+            <label for="productDescription" class="form-label">Description</label>
+            <textarea 
+              class="form-control" 
+              id="productDescription" 
+              formControlName="description"
+              rows="3" 
+              placeholder="Enter product description"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="productImage" class="form-label">Upload Product Image</label>
+            <input 
+              type="file" 
+              class="form-control mb-2" 
+              id="productImage" 
+              (change)="onFileChange($event)"
+              accept="image/*">
+             
+              <div *ngIf="imagePreview" class="text-center mt-3">
+                <span class="d-block text-muted mb-2">Preview Image</span>
+                <img [src]="imagePreview" alt="Product Image" class="img-fluid rounded border shadow" style="max-width: 100px; height: auto;" />
+              </div>
+              
+          </div>
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary flex-grow-1">
+              {{ isEditMode ? 'Update' : 'Submit' }}
+            </button>
+            
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

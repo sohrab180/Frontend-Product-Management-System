@@ -1,0 +1,21 @@
+<header class="main-header">
+  <div class="container">
+    <div class="logo">
+      <a href="/" >
+
+        <img  src="/imgs/product-logo.png" alt="Product Logo">
+      </a>
+    </div>
+    <div class="search-box" *ngIf="false">
+      <input type="text" placeholder="Search for products..." aria-label="Search">
+      <button><i class="fas fa-search"></i></button>
+    </div>
+    <nav class="navbar">
+      <ul class="nav-links">
+       
+        <li><a routerLink="/product-list"> Product List</a></li>
+        <li class="add-product"><a routerLink="/product-form" class="btn-login "><i class="fas fa-user"></i> Add product</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

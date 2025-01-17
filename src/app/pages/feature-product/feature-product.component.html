@@ -1,0 +1,19 @@
+<div class="container my-5">
+  <h2 class="mb-4 text-center">Featured Products</h2>
+  <div class="row g-4">
+    <div class="col-md-3 col-sm-6" *ngFor="let product of products | slice:0:4">
+      <div class="product-card">
+        <span class="badge-discount">{{ staticDiscountMessage }}</span>
+        <img [src]="product?.image"  class="product-image">
+        <div class="product-card-body">
+          <h5 class="product-title">{{ product?.name }}</h5>
+          <div class="rating">
+            <div class="rating">★ 4.2 (80 Reviews)</div>
+          </div>
+          <p class="product-price">₹{{ product?.price }} <span class="original-price">₹999</span></p>
+          <button class="btn btn-buy">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

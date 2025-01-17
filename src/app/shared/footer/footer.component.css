@@ -1,0 +1,52 @@
+.container-fluid {
+   box-shadow: #ced4da;
+  }
+  
+  footer h5 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  
+  footer h5::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: #343a40;
+    margin-top: 0.5rem;
+  }
+  
+  .nav-link {
+    color: #6c757d;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #343a40;
+    text-decoration: underline;
+  }
+  
+  .social-icons a {
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #495057;
+  }
+  
+  .input-group .form-control {
+    border: 1px solid #ced4da;
+  }
+  
+  .input-group .btn {
+    background-color: #343a40;
+    color: #fff;
+  }
+  
+  .input-group .btn:hover {
+    background-color: #495057;
+    color: #fff;
+  }
+  
